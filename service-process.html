@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>双木工坊 · 服務流程</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark:       #1A1A1A;
+    --dark-mid:   #252525;
+    --grey-deep:  #383838;
+    --grey-mid:   #5A5A5A;
+    --grey-light: #8A8A8A;
+    --grey-line:  #D8D8D8;
+    --silver:     #F0F0F0;
+    --white:      #F8F8F8;
+    --pure-white: #FFFFFF;
+    --gold:       #C9A96E;
+    --gold-light: #E2C896;
+    --gold-dark:  #9A7030;
+    --green:      #6B9E3C;
+    --green-pale: #EAF3DC;
+    --text-dark:  #1A1A1A;
+    --text-mid:   #484848;
+    --text-light: #7A7A7A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #E8E8E8;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--dark);
+    padding: 26px 60px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(107,158,60,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold-dark) 20%, var(--gold) 50%, var(--green) 75%, transparent 100%);
+  }
+  .header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand { display: flex; align-items: center; gap: 18px; }
+  .logo-wrap {
+    width: 66px; height: 66px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(201,169,110,0.35);
+    flex-shrink: 0;
+    background: #000;
+  }
+  .logo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+  .brand-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--gold-light);
+    letter-spacing: 5px;
+  }
+  .brand-sub {
+    font-size: 10px;
+    color: var(--grey-light);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .brand-corp {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+    margin-top: 3px;
+  }
+
+  .header-right { text-align: right; }
+  .header-right h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 6px;
+  }
+  .header-right .subtitle {
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-top: 4px;
+  }
+  .region-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 7px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    background: var(--green-pale);
+    border: 1px solid rgba(107,158,60,0.4);
+  }
+  .region-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+  .region-badge span { font-size: 11.5px; color: var(--green); font-weight: 600; letter-spacing: 1px; }
+
+  /* ── TIERS ── */
+  .tiers-section {
+    background: var(--dark-mid);
+    padding: 26px 60px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .tiers-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .tier-card { border-radius: 10px; padding: 24px 28px; position: relative; overflow: hidden; }
+  .tier-card.tier-a { background: var(--grey-deep); border: 1px solid rgba(255,255,255,0.07); }
+  .tier-card.tier-b { background: #201E10; border: 1px solid rgba(201,169,110,0.22); }
+  .tier-card.tier-b::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+  }
+
+  .tier-badge { display: flex; align-items: center; gap: 12px; margin-bottom: 13px; }
+  .tier-letter {
+    width: 38px; height: 38px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif TC', serif; font-size: 18px; font-weight: 900; flex-shrink: 0;
+  }
+  .tier-a .tier-letter { background: rgba(255,255,255,0.08); color: #CCCCCC; }
+  .tier-b .tier-letter { background: var(--gold); color: var(--dark); }
+  .tier-title { font-family: 'Noto Serif TC', serif; font-size: 20px; font-weight: 700; letter-spacing: 3px; }
+  .tier-a .tier-title { color: #D2D2D2; }
+  .tier-b .tier-title { color: var(--gold-light); }
+  .tier-desc { font-size: 12.5px; line-height: 1.9; }
+  .tier-a .tier-desc { color: rgba(255,255,255,0.5); }
+  .tier-b .tier-desc { color: rgba(226,200,150,0.7); }
+  .tier-note { margin-top: 11px; padding: 6px 12px; border-radius: 6px; font-size: 11.5px; }
+  .tier-a .tier-note { background: rgba(255,255,255,0.05); color: var(--grey-light); }
+  .tier-b .tier-note { background: rgba(201,169,110,0.1); color: var(--gold); font-weight: 500; }
+
+  /* ── MAIN ── */
+  main { max-width: 1120px; margin: 0 auto; padding: 42px 60px 54px; }
+
+  .section-title {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 26px;
+  }
+  .section-title::before, .section-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--grey-line);
+  }
+  .section-title h3 {
+    font-family: 'Noto Serif TC', serif; font-size: 14px; font-weight: 700;
+    color: var(--text-mid); letter-spacing: 5px; white-space: nowrap;
+  }
+  .title-gem {
+    width: 6px; height: 6px; background: var(--gold);
+    border-radius: 1px; transform: rotate(45deg); flex-shrink: 0;
+  }
+
+  /* ── STEPS ── */
+  .steps-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 42px;
+  }
+  .step-card {
+    background: var(--pure-white); border-radius: 10px; padding: 20px 17px 18px;
+    border: 1px solid var(--grey-line);
+    transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    animation: fadeUp 0.5s ease both;
+  }
+  .step-card:hover { transform: translateY(-5px); box-shadow: 0 10px 32px rgba(0,0,0,0.09); border-color: var(--gold); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .step-card:nth-child(1){animation-delay:.04s}
+  .step-card:nth-child(2){animation-delay:.09s}
+  .step-card:nth-child(3){animation-delay:.14s}
+  .step-card:nth-child(4){animation-delay:.19s}
+  .step-card:nth-child(5){animation-delay:.24s}
+  .step-card:nth-child(6){animation-delay:.29s}
+  .step-card:nth-child(7){animation-delay:.34s}
+
+  .step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; padding-bottom: 11px; border-bottom: 1px solid var(--silver); }
+  .step-num {
+    width: 33px; height: 33px; border-radius: 7px; background: var(--dark);
+    color: var(--gold-light); font-family: 'Noto Serif TC', serif; font-size: 15px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .step-title { font-family: 'Noto Serif TC', serif; font-size: 13.5px; font-weight: 700; color: var(--text-dark); letter-spacing: 1.5px; line-height: 1.35; }
+  .step-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .step-list li { font-size: 11.5px; line-height: 1.7; color: var(--text-mid); padding-left: 13px; position: relative; }
+  .step-list li::before { content: '›'; position: absolute; left: 0; color: var(--gold); font-size: 14px; font-weight: 700; line-height: 1.5; }
+  .step-tag { display: inline-block; margin-top: 11px; padding: 3px 10px; border-radius: 20px; font-size: 10px; letter-spacing: 1px; font-weight: 600; }
+  .tag-both   { background: var(--silver); color: var(--text-light); border: 1px solid var(--grey-line); }
+  .tag-design { background: rgba(201,169,110,0.1); color: var(--gold-dark); border: 1px solid rgba(201,169,110,0.4); }
+
+  /* ── PRICING ── */
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 42px; }
+  .pricing-card { background: var(--pure-white); border-radius: 10px; overflow: hidden; border: 1px solid var(--grey-line); }
+  .pricing-header { padding: 15px 22px; display: flex; align-items: center; gap: 10px; }
+  .pricing-card.p-design .pricing-header { background: var(--dark); }
+  .pricing-card.p-extra  .pricing-header { background: var(--grey-deep); }
+  .pricing-header h4 { font-family: 'Noto Serif TC', serif; font-size: 13.5px; font-weight: 700; color: var(--gold-light); letter-spacing: 3px; }
+  .pricing-body { padding: 17px 22px; }
+  .price-row { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px dashed var(--grey-line); }
+  .price-row:last-child { border-bottom: none; }
+  .price-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 6px; }
+  .price-amount { font-size: 13px; font-weight: 700; color: var(--text-dark); display: block; }
+  .price-note { font-size: 11px; color: var(--text-light); margin-top: 2px; display: block; line-height: 1.6; }
+
+  /* ── BOTTOM ── */
+  .bottom-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 18px; }
+  .scope-card, .contact-card { background: var(--pure-white); border-radius: 10px; overflow: hidden; border: 1px solid var(--grey-line); }
+  .card-header { padding: 14px 22px; background: var(--dark); }
+  .card-header h4 { font-family: 'Noto Serif TC', serif; font-size: 13px; font-weight: 700; color: var(--gold-light); letter-spacing: 3px; }
+  .card-body { padding: 17px 22px; }
+  .scope-desc { font-size: 12px; color: var(--text-light); margin-bottom: 13px; line-height: 1.7; }
+  .scope-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .scope-tag { padding: 5px 13px; border-radius: 20px; font-size: 12px; font-weight: 500; letter-spacing: 1px; }
+  .scope-tag.hl  { background: var(--dark); color: var(--gold-light); }
+  .scope-tag.gr  { background: var(--green-pale); color: var(--green); border: 1px solid rgba(107,158,60,0.3); }
+  .scope-tag.nor { background: var(--silver); color: var(--text-mid); border: 1px solid var(--grey-line); }
+  .contact-list { display: flex; flex-direction: column; gap: 10px; }
+  .contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; color: var(--text-mid); line-height: 1.6; }
+  .c-icon { width: 26px; height: 26px; border-radius: 6px; background: var(--silver); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+  .c-icon.g { background: var(--green-pale); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--dark); padding: 18px 60px; border-top: 2px solid rgba(201,169,110,0.18); }
+  .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .footer-services { display: flex; align-items: center; }
+  .footer-services span { font-family: 'Noto Serif TC', serif; font-size: 13px; color: rgba(255,255,255,0.55); letter-spacing: 2px; padding: 0 18px; }
+  .footer-services span + span { border-left: 1px solid rgba(255,255,255,0.12); }
+  .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+  .footer-brand { font-family: 'Noto Serif TC', serif; font-size: 13px; color: var(--gold); letter-spacing: 2px; }
+  .footer-copy { font-size: 10px; color: rgba(255,255,255,0.22); letter-spacing: 2px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="logo-wrap">
+        <img src="data:image/jpeg;base64,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" alt="双木工坊">
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">双木工坊</div>
+        <div class="brand-sub">Twinwood Life · Interior Design</div>
+        <div class="brand-corp">台灣雙木生活股份有限公司</div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <h2>服務流程</h2>
+      <div class="subtitle">Service Process Chart</div>
+      <div class="region-badge">
+        <div class="region-dot"></div>
+        <span>基隆 · 雙北 · 桃園 · 全台服務</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TIERS -->
+<div class="tiers-section">
+  <div class="tiers-inner">
+    <div class="tier-card tier-a">
+      <div class="tier-badge">
+        <div class="tier-letter">A</div>
+        <span class="tier-title">統包工程案</span>
+      </div>
+      <p class="tier-desc">以工程施作為主，不含設計規劃及實景模擬。<br>依客戶需求直接提供工程報價，確認後進行施工。<br>適合已有明確規劃，以工程執行為主要目標的案件。</p>
+      <div class="tier-note">✦ 統包丈量規劃費 $3,600 · 不含設計費、3D圖、實景模擬圖</div>
+    </div>
+    <div class="tier-card tier-b">
+      <div class="tier-badge">
+        <div class="tier-letter">B</div>
+        <span class="tier-title">設計工程案</span>
+      </div>
+      <p class="tier-desc">含完整室內設計服務：丈量、平面配置、立面圖、3D實景模擬圖。<br>客戶可提供參考圖片（家具、風格等），量身打造設計方案。<br>承接工程時，設計費可折抵 30% 費用。</p>
+      <div class="tier-note">★ 設計案規劃費每坪 $1,500 起 · 承接工程設計費折抵 30%</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <div class="section-title">
+    <div class="title-gem"></div>
+    <h3>服務流程 · 七大步驟</h3>
+    <div class="title-gem"></div>
+  </div>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-header"><div class="step-num">1</div><div class="step-title">初步諮詢</div></div>
+      <ul class="step-list">
+        <li>了解設計風格與生活需求</li>
+        <li>確認裝修項目與預算範圍</li>
+        <li>確認案件類型：統包案或設計案</li>
+      </ul>
+      <span class="step-tag tag-both">A ＋ B 共用</span>
+    </div>
+    <div class="step-card">
+      <div class="step-header"><div class="step-num">2</div><div class="step-title">線上初估諮詢</div></div>
+      <ul class="step-list">
+        <li>客戶提供含尺寸的平面圖</li>
+        <li>提供各區牆面尺寸、天花板高度</li>
+        <li>說明天花板管線及施作項目</li>
+        <li>依資料提供初估預算書</li>
+      </ul>
+      <span class="step-tag tag-both">A ＋ B 共用</span>
+    </div>
+    <div class="step-card">
+      <div class="step-header"><div class="step-num">3</div><div class="step-title">取得格局圖／丈量</div></div>
+      <ul class="step-list">
+        <li>線上取得建商電子檔</li>
+        <li>統包案：丈量規劃費 $3,600</li>
+        <li>設計案：規劃費每坪 $1,500 起</li>
+        <li>雙北、桃園為主，偏遠及外縣市另計車馬費</li>
+      </ul>
+      <span class="step-tag tag-both">A ＋ B 共用</span>
+    </div>
+    <div class="step-card">
+      <div class="step-header"><div class="step-num">4</div><div class="step-title">平面討論與設計規劃</div></div>
+      <ul class="step-list">
+        <li>平面配置圖（含動線細節討論）</li>
+        <li>木作圖、燈具圖、空調圖、弱電圖</li>
+        <li>立面圖 3 次、模擬圖依張數報價</li>
+        <li>設計案規劃費每坪 $1,500 起</li>
+      </ul>
+      <span class="step-tag tag-design">B 設計案</span>
+    </div>
+    <div class="step-card">
+      <div class="step-header"><div class="step-num">5</div><div class="step-title">簽訂合約與定案</div></div>
+      <ul class="step-list">
+        <li>簽訂設計合約或工程施作合約</li>
+        <li>確認建材、樣板等細節</li>
+        <li>依施工圖提供詳細工程報價</li>
+        <li>統包案可省略設計環節</li>
+      </ul>
+      <span class="step-tag tag-both">A ＋ B 共用</span>
+    </div>
+    <div class="step-card">
+      <div class="step-header"><div class="step-num">6</div><div class="step-title">工程施作</div></div>
+      <ul class="step-list">
+        <li>專業固定工班施工</li>
+        <li>工地實際勘查、監督施工品質</li>
+        <li>拍照紀錄工程進度細節</li>
+        <li>掌控進度，定期回報業主</li>
+      </ul>
+      <span class="step-tag tag-both">A ＋ B 共用</span>
+    </div>
+    <div class="step-card">
+      <div class="step-header"><div class="step-num">7</div><div class="step-title">完工交屋</div></div>
+      <ul class="step-list">
+        <li>依施工圖進行驗收</li>
+        <li>點交並簽訂保固書</li>
+        <li>提供一年工程保固</li>
+        <li>享有售後免費諮詢服務</li>
+      </ul>
+      <span class="step-tag tag-both">A ＋ B 共用</span>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <div class="title-gem"></div>
+    <h3>費用說明</h3>
+    <div class="title-gem"></div>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="pricing-card p-design">
+      <div class="pricing-header"><span>📐</span><h4>設計案費用明細</h4></div>
+      <div class="pricing-body">
+        <div class="price-row">
+          <div class="price-dot"></div>
+          <div><span class="price-amount">統包丈量規劃費 $3,600</span><span class="price-note">含丈量一次、平面配置一次、報價一次（可折抵設計案費用）</span></div>
+        </div>
+        <div class="price-row">
+          <div class="price-dot"></div>
+          <div><span class="price-amount">設計案規劃費 每坪 $1,500 起</span><span class="price-note">含平面配置 3 次、立面 3 次、圖面確立後現場複對一次</span></div>
+        </div>
+        <div class="price-row">
+          <div class="price-dot"></div>
+          <div><span class="price-amount">實景模擬圖 每張 $500 起</span><span class="price-note">依模擬內容程度個別報價</span></div>
+        </div>
+        <div class="price-row">
+          <div class="price-dot"></div>
+          <div><span class="price-amount">承接工程：設計費折抵 30%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="pricing-card p-extra">
+      <div class="pricing-header"><span>📋</span><h4>超出次數追加費用</h4></div>
+      <div class="pricing-body">
+        <div class="price-row"><div class="price-dot"></div><div><span class="price-amount">平面圖調整修改 $1,500 起</span></div></div>
+        <div class="price-row"><div class="price-dot"></div><div><span class="price-amount">報價單調整修改 $1,500 起</span></div></div>
+        <div class="price-row"><div class="price-dot"></div><div><span class="price-amount">立面圖修改 每張 $500 起</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <div class="title-gem"></div>
+    <h3>服務範疇 ｜ 聯絡方式</h3>
+    <div class="title-gem"></div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="scope-card">
+      <div class="card-header"><h4>服務類型 ｜ 圖面種類</h4></div>
+      <div class="card-body">
+        <p class="scope-desc">以下為可提供的服務項目，各案件依需求組合報價：</p>
+        <div class="scope-tags">
+          <span class="scope-tag hl">住宅室內設計</span>
+          <span class="scope-tag hl">舊屋翻新</span>
+          <span class="scope-tag hl">商業空間</span>
+          <span class="scope-tag hl">客變規劃</span>
+          <span class="scope-tag gr">平面配置圖</span>
+          <span class="scope-tag gr">木作圖</span>
+          <span class="scope-tag gr">燈具圖</span>
+          <span class="scope-tag gr">空調圖</span>
+          <span class="scope-tag gr">弱電圖</span>
+          <span class="scope-tag nor">立面圖</span>
+          <span class="scope-tag nor">3D 實景模擬圖</span>
+          <span class="scope-tag nor">工程施工圖</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="card-header"><h4>聯絡我們</h4></div>
+      <div class="card-body">
+        <div class="contact-list">
+          <div class="contact-item"><div class="c-icon g">💬</div><span>LINE：@943ckomc</span></div>
+          <div class="contact-item"><div class="c-icon">📘</div><span>FB：双木工坊</span></div>
+          <div class="contact-item"><div class="c-icon">📸</div><span>IG：twinwoodhouse</span></div>
+          <div class="contact-item"><div class="c-icon">📍</div><span>新北市三重區重新路五段 609 巷 2 號 B1 樓 D16 室（湯城廣場內）</span></div>
+          <div class="contact-item"><div class="c-icon g">🌿</div><span>全台皆有服務，以北部區域（基隆、雙北、桃園）為主</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-services">
+      <span>住宅 · 室內設計</span>
+      <span>客變規劃</span>
+      <span>舊屋翻新</span>
+      <span>商業空間</span>
+    </div>
+    <div class="footer-right">
+      <div class="footer-brand">双木工坊 · 台灣雙木生活股份有限公司</div>
+      <div class="footer-copy">有著作權 侵害必究</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
